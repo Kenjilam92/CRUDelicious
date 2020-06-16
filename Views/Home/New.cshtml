@@ -1,0 +1,44 @@
+@{
+    ViewData["Title"] = "Add A New Dish";
+}
+@model Dish
+
+<div class="container">
+    <div class="col fustify-content-center">
+        <div class="col jumbotron">
+            <h1>Add a new dish</h1>
+            <a href="/">Home</a>
+        </div>
+        <form action="/add" class="row mt-3" method="post">
+            <div class="col-4 d-flex flex-column">
+                <label asp-for="Chef"></label>
+                <span asp-validation-for="Chef" class="text-danger"></span>
+                <input asp-for="Chef">
+                <label asp-for="Name"></label>
+                <span asp-validation-for="Name" class="text-danger"></span>
+                <input asp-for="Name">
+                <label asp-for="Calories"></label>
+                <span asp-validation-for="Calories" class="text-danger"></span>
+                <input asp-for="Calories" >
+            </div>
+            <div class="col-3 d-flex flex-column">
+                <label asp-for="Tastiness"></label>
+                <select asp-for="Tastiness">
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                    <option value=5>5</option>
+                </select>
+                <span asp-validation-for="Tastiness" class="text-danger"></span>
+            </div>
+            <div class="col-5 d-flex flex-column">
+                <label asp-for="Description"></label>
+                <textarea asp-for="Description" cols="30" rows="10"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+                <button class="btn btn-primary mt-2" style="width: fit-content;" type="submit">Add Dish</button>
+            </div>
+        </form>
+    </div>
+
+</div>
